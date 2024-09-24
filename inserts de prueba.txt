@@ -1,0 +1,40 @@
+INSERT INTO hotel (nit, nombre, correo, telefono, ubicacion, categoria) VALUES
+(100000001, 'Hotel del Sol', 'contacto@hoteldelsol.com', 3112345678, 'Bogotá', 4),
+(100000002, 'Hotel Luna', 'info@hotelluna.com', 3159876543, 'Medellín', 5),
+(100000003, 'Hotel Estrella', 'reservas@hotelestrella.com', 3123456789, 'Cartagena', 3),
+(100000004, 'Hotel Brisas', 'brisas@hotelbrisas.com', 3109871234, 'Cali', 4),
+(100000005, 'Hotel Oasis', 'reservas@hoteloasis.com', 3198765432, 'Barranquilla', 3),
+(100000006, 'Hotel Pacifico', 'info@hotelpacifico.com', 3107654987, 'Santa Marta', 5),
+(100000007, 'Hotel Montaña', 'contact@hotelmontaña.com', 3209875432, 'Bogotá', 2),
+(100000008, 'Hotel Vista', 'info@hotelvista.com', 3111239876, 'Medellín', 3),
+(100000009, 'Hotel Arena', 'reservas@hotelarena.com', 3229876541, 'Cartagena', 4),
+(100000010, 'Hotel Paraíso', 'info@hotelparaiso.com', 3106543219, 'Cali', 5);
+
+
+
+
+INSERT INTO empleado (id, tipo_id, nombre, telefono, correo, salario, entrada, hotel_trabaja) VALUES
+(1010101010, 'CC', 'Carlos Pérez', 3201234567, 'carlos.perez@hoteldelsol.com', 2800000, 'Principal', 100000001),
+(1010101020, 'CC', 'Ana Gómez', 3107654321, 'ana.gomez@hotelluna.com', 3500000, 'Secundaria', 100000002),
+(1010101030, 'EX', 'James Smith', 3219876543, 'james.smith@hotelestrella.com', 2900000, 'Principal', 100000003),
+(1010101040, 'CC', 'Laura Martínez', 3221239876, 'laura.martinez@hotelbrisas.com', 3000000, 'Principal', 100000004),
+(1010101050, 'EX', 'Pedro López', 3198764321, 'pedro.lopez@hoteloasis.com', 3100000, 'Secundaria', 100000005),
+(1010101060, 'CC', 'María Fernández', 3126543210, 'maria.fernandez@hotelpacifico.com', 4000000, 'Principal', 100000006),
+(1010101070, 'CC', 'Julio Gutiérrez', 3138765432, 'julio.gutierrez@hotelmontaña.com', 2700000, 'Principal', 100000007),
+(1010101080, 'EX', 'Emily White', 3141239876, 'emily.white@hotelvista.com', 3200000, 'Secundaria', 100000008),
+(1010101090, 'CC', 'Santiago Ruiz', 3156547890, 'santiago.ruiz@hotelarena.com', 3500000, 'Principal', 100000009),
+(1010101100, 'EX', 'Juan Rodríguez', 3198761234, 'juan.rodriguez@hotelparaiso.com', 3700000, 'Secundaria', 100000010);
+
+
+
+INSERT INTO reserva (codigo, fecha_inicio, fecha_fin, fecha_expedicion, num_personas, estado_reserva, valor_reserva, generada_por_id, generada_por_tipoid, revisada_por_id, revisada_por_tipoid) VALUES
+(200000001, '2024-09-10', '2024-09-15', '2024-09-08', 2, 'en curso', 500000, 1010101010, 'CC', NULL, NULL),
+(200000002, '2024-09-18', '2024-09-20', '2024-09-15', 1, 'en curso', 250000, 1010101020, 'CC', 1010101010, 'CC'),
+(200000003, '2024-09-12', '2024-09-14', '2024-09-10', 3, 'cancelada', 450000, 1010101030, 'EX', NULL, NULL),
+(200000004, '2024-09-22', '2024-09-25', '2024-09-20', 2, 'finalizada', 600000, 1010101040, 'CC', 1010101050, 'EX'),
+(200000005, '2024-09-16', '2024-09-18', '2024-09-14', 2, 'en curso', 550000, 1010101050, 'EX', NULL, NULL),
+(200000006, '2024-09-11', '2024-09-13', '2024-09-09', 3, 'cancelada', 470000, 1010101060, 'CC', NULL, NULL),
+(200000007, '2024-09-19', '2024-09-22', '2024-09-16', 2, 'en curso', 590000, 1010101070, 'CC', 1010101060, 'CC'),
+(200000008, '2024-09-23', '2024-09-27', '2024-09-21', 1, 'en curso', 620000, 1010101080, 'EX', 1010101090, 'CC'),
+(200000009, '2024-09-15', '2024-09-17', '2024-09-13', 2, 'finalizada', 560000, 1010101090, 'CC', NULL, NULL),
+(200000010, '2024-09-25', '2024-09-28', '2024-09-22', 3, 'en curso', 700000, 1010101100, 'EX', NULL, NULL);
