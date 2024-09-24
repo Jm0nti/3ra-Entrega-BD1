@@ -2,7 +2,7 @@ CREATE TABLE empleado (
     id INT(10) NOT NULL CHECK (id >= 0),
     tipo_id ENUM('CC', 'EX') NOT NULL,
     nombre VARCHAR(30) NOT NULL,
-    telefono BIGINT NOT NULL UNIQUE CHECK(telefono >= 0),
+    telefono INT(10) NOT NULL UNIQUE CHECK(telefono >= 0),
     correo VARCHAR(30) NOT NULL UNIQUE,
     salario INT(8) CHECK (salario >= 0),
     entrada ENUM('Principal', 'Secundaria'), -- Nuevo atributo para las recepcionistas
@@ -13,13 +13,13 @@ CREATE TABLE empleado (
 
 
 CREATE TABLE reserva (
-    codigo INT(9) PRIMARY KEY,
+    codigo INT(9) PRIMARY KEY CHECK(codigo >= 0),
     fecha_inicio DATE NOT NULL,
     fecha_fin DATE NOT NULL,
     fecha_expedicion DATE NOT NULL,
     num_personas INT NOT NULL CHECK(num_personas BETWEEN 1 AND 3),
     estado_reserva ENUM('finalizada', 'cancelada', 'en curso') NOT NULL,
-    valor_reserva INT NOT NULL CHECK(valor_reserva >= 0),
+    valor_reserva INT(9) NOT NULL CHECK(valor_reserva >= 0),
     generada_por_id INT(10) NOT NULL,
     generada_por_tipoid ENUM('CC', 'EX') NOT NULL,
     revisada_por_id INT(10),
@@ -33,10 +33,10 @@ CREATE TABLE reserva (
 
 
 CREATE TABLE hotel (
-    nit INT(9) PRIMARY KEY,
+    nit INT(9) PRIMARY KEY CHECK(nit>=0),
     nombre VARCHAR(30) NOT NULL,
     correo VARCHAR(30) UNIQUE NOT NULL, 
-    telefono BIGINT NOT NULL UNIQUE,
+    telefono INT(10) NOT NULL UNIQUE CHECK(telefono>=0),
     ubicacion VARCHAR(30) NOT NULL,
     categoria INT NOT NULL CHECK(categoria BETWEEN 1 AND 5)   
 );
