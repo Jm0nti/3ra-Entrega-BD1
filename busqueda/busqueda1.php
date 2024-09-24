@@ -6,9 +6,8 @@ include "../includes/header.php";
 <h1 class="mt-3">Búsqueda 1</h1>
 
 <p class="mt-3">
-    Dos fechas f1 y f2 (cada fecha con día, mes y año), f2 ≥ f1 y un número entero n,
-    n ≥ 0. Se debe mostrar la cédula y el celular de todos los clientes que han 
-    revisado exactamente n proyectos en dicho rango de fechas [f1, f2].
+    Total recaudado por recepcionista entre fechas f1 y f2 (f2>=f1) a partir de las reservas que ha generado
+    entre esas 2 fechas.
 </p>
 
 <!-- FORMULARIO. Cambiar los campos de acuerdo a su trabajo -->
@@ -31,6 +30,7 @@ include "../includes/header.php";
             <label for="numero" class="form-label">Número</label>
             <input type="number" class="form-control" id="numero" name="numero" required>
         </div>
+
 
         <button type="submit" class="btn btn-primary">Buscar</button>
 
