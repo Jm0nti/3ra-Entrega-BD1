@@ -4,7 +4,7 @@ CREATE TABLE empleado (
     nombre VARCHAR(30) NOT NULL,
     telefono BIGINT NOT NULL UNIQUE CHECK(telefono >= 0),
     correo VARCHAR(30) NOT NULL UNIQUE,
-    salario INT CHECK(8) (salario >= 0),
+    salario INT(8) CHECK (salario >= 0),
     entrada ENUM('Principal', 'Secundaria'), -- Nuevo atributo para las recepcionistas
     hotel_trabaja INT(9) NOT NULL,
     PRIMARY KEY (id, tipo_id),
