@@ -6,7 +6,7 @@ include "../includes/header.php";
 <h1 class="mt-3">Búsqueda 1</h1>
 
 <p class="mt-3">
-    Total recaudado por recepcionista entre fechas f1 y f2 (f2>=f1) a partir de las reservas que ha generado
+    Total recaudado por recepcionista entre fechas f1 y f2 (f2>=f1) a partir de las reservas que ha revisado
     entre esas 2 fechas.
 </p>
 
@@ -62,9 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'):
     $query = "
         SELECT e.nombre, SUM(r.valor_reserva) AS total_recaudado
         FROM reserva r
-        JOIN empleado e ON r.generada_por_id = e.id AND r.generada_por_tipoid = e.tipo_id
-        WHERE r.generada_por_id = '$id_recepcionista'
-        AND r.generada_por_tipoid = '$tipo_id_recepcionista'
+        JOIN empleado e ON r.revisada_por_id = e.id AND r.revisada_por_tipoid = e.tipo_id
+        WHERE r.revisada_por_id = '$id_recepcionista'
+        AND r.revisada_por_tipoid = '$tipo_id_recepcionista'
         AND r.fecha_expedicion BETWEEN '$fecha1' AND '$fecha2'
         GROUP BY e.nombre
     ";
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'):
     else:
 ?>
 <div class="alert alert-danger text-center mt-5">
-    No se encontraron reservas generadas por la recepcionista en este rango de fechas.
+    No se encontraron reservas revisadas por la recepcionista en este rango de fechas.
 </div>
 <?php
     endif;

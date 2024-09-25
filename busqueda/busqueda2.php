@@ -6,7 +6,7 @@ include "../includes/header.php";
 <h1 class="mt-3">Búsqueda 2</h1>
 
 <p class="mt-3">
-    Reservas generadas por la recepcionista de mayor salario adscrita a un hotel determinado.
+    Reservas revisadas por la recepcionista de mayor salario adscrita a un hotel determinado.
 </p>
 
 <!-- FORMULARIO -->
@@ -72,8 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'):
         $queryReservas = "
             SELECT codigo, fecha_inicio, fecha_fin, fecha_expedicion, num_personas, estado_reserva, valor_reserva
             FROM reserva
-            WHERE generada_por_id = '$id_empleado'
-            AND generada_por_tipoid = '$tipo_id_empleado'
+            WHERE revisada_por_id = '$id_empleado'
+            AND revisada_por_tipoid = '$tipo_id_empleado'
         ";
 
         $resultadoReservas = mysqli_query($conn, $queryReservas) or die(mysqli_error($conn));
@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'):
     else:
 ?>
 <div class="alert alert-danger text-center mt-5">
-    No se encontraron reservas generadas por la recepcionista de mayor salario en este hotel.
+    No se encontraron reservas revisadas por la recepcionista de mayor salario en este hotel.
 </div>
 <?php
     endif; // Fin de la verificación de reservas
