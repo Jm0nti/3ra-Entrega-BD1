@@ -38,7 +38,7 @@ CREATE TABLE hotel (
     correo VARCHAR(30) UNIQUE NOT NULL, 
     telefono BIGINT(10) NOT NULL UNIQUE CHECK(telefono>=0) CHECK(telefono<=9999999999),
     ubicacion VARCHAR(30) NOT NULL,
-    categoria INT NOT NULL CHECK(categoria BETWEEN 1 AND 5)
+    categoria INT CHECK(categoria BETWEEN 1 AND 5)
 );
 
 
