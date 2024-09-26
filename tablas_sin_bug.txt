@@ -30,8 +30,6 @@ CREATE TABLE reserva (
     CHECK (fecha_inicio > fecha_expedicion)
 );
 
-
-
 CREATE TABLE hotel (
     nit INT(9) PRIMARY KEY CHECK(nit>=0) CHECK(nit<=999999999),
     nombre VARCHAR(30) NOT NULL,
@@ -40,22 +38,3 @@ CREATE TABLE hotel (
     ubicacion VARCHAR(30) NOT NULL,
     categoria INT CHECK(categoria BETWEEN 1 AND 5)
 );
-
-
-
-
-#### CONSTRAINTS ####
-
-ALTER TABLE reserva
-ADD CONSTRAINT codigoo_check CHECK (codigo<=999999999);
-
-ALTER TABLE reserva
-ADD CONSTRAINT valorr_reserva_check
-CHECK(valor_reserva<=999999999);
-
-ALTER TABLE hotel
-ADD CONSTRAINT nitt_check CHECK (nit<=999999999);
-
-ALTER TABLE hotel
-ADD CONSTRAINT telefono_h_check 
-CHECK(telefono<=9999999999);

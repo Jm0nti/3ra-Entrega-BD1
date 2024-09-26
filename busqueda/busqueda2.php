@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'):
         SELECT id, tipo_id, nombre
         FROM empleado
         WHERE hotel_trabaja = '$nit_hotel'
-        ORDER BY salario DESC
+        ORDER BY salario DESC, nombre ASC
         LIMIT 1
     ";
 
