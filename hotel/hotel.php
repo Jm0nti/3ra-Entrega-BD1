@@ -22,7 +22,7 @@ include "../includes/header.php";
 
         <div class="mb-3">
             <label for="correo" class="form-label">Correo</label>
-            <input type="text" class="form-control" id="correo" name="correo" required>
+            <input type="email" class="form-control" id="correo" name="correo" required>
         </div>
 
         <div class="mb-3">
