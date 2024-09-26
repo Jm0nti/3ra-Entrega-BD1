@@ -37,7 +37,7 @@
     <div class="modelo">
         <h2>Modelo E-R</h2>
         <p></p>
-        <img src="modelo.jpeg" height="800px" width="1100px">
+        <img src="modelo.jpg" height="800px" width="1100px">
     </div>
 
     <div class="enlaces">
